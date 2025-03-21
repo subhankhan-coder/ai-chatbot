@@ -21,10 +21,9 @@ def chat():
         response = model.generate_content(user_message)
         #ai_response = response.text  
 
-         # Remove markdown formatting
-        clean_response = response.text.replace('**', '')  # Remove bold markers
-        clean_response = clean_response.replace('*', '')   # Remove italics markers
-        clean_response = clean_response.replace('`', '')   # Remove code markers
+        clean_response = response.text.replace('**', '') 
+        clean_response = clean_response.replace('*', '') 
+        clean_response = clean_response.replace('`', '') 
 
         return jsonify({"response": clean_response})
 
